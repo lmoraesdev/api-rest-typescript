@@ -3,6 +3,10 @@ import { VideoController } from "../Controllers/VideoController";
 
 const router = Router();
 
-router.post("/room", new VideoController().create);
+router
+	.get("/video", () => {
+		console.log("rota funcionando");
+	})
+	.post("/video", new VideoController().create);
 
 export default router;

@@ -3,6 +3,10 @@ import { RoomController } from "../Controllers/RoomController";
 
 const router = Router();
 
-router.post("/room", new RoomController().create);
-
-export default router
+router
+	.get("/room", () => {
+		console.log("rota funcionando");
+	})
+	.post("/room", new RoomController().create);
+//	.post("/room/:idaula/create")
+export default router;

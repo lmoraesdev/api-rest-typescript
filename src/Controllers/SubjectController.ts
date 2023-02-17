@@ -1,4 +1,4 @@
-import { subjectRepository } from "./../repositories/subjectRepository";
+import { subjectRepository } from "../repositories/subjectRepository";
 import { Request, Response } from "express";
 
 export class SubjectController {
@@ -8,12 +8,9 @@ export class SubjectController {
 		if (!name) {
 			return res.status(400).json({ mensagem: "o nome é obrigatorio" });
 		}
-
 		try {
 			const newSubject = subjectRepository.create({ name });
-
 			await subjectRepository.save(newSubject);
-
 			return res.status(201).json(newSubject);
 		} catch (error) {
 			console.log(error);
